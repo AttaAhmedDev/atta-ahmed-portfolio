@@ -180,6 +180,7 @@ export type Project = {
   features: string[]
   github: string
   live: string
+  image?: string
 }
 
 export const projects: Project[] = [
@@ -205,6 +206,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/AttaAhmedDev/saas-dashboard',
     live: 'https://saas-dashboard-atta14.vercel.app/',
+    image: '/projects/flowdesk.png',
   },
   {
     id: 'albushra',
@@ -228,6 +230,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/AttaAhmedDev/albushraedu_website',
     live: 'https://albushraedu.com',
+    image: '/projects/albushra.png',
   },
   {
     id: 'ecommerce-api',
@@ -274,6 +277,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/AttaAhmedDev/movie-app',
     live: 'https://movie-j0edcnhb7-atta14.vercel.app/',
+    image: '/projects/movie-app.png',
   },
 ]
 

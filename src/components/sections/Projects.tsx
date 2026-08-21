@@ -37,7 +37,19 @@ function ProjectCard({ project }: { project: Project }) {
   const demoLive = !isPlaceholderHref(project.live)
 
   return (
-    <article className="flex h-full min-w-0 flex-col border border-line bg-ink p-5 transition-[border-color,transform] duration-300 hover:border-line-strong motion-safe:hover:-translate-y-0.5 sm:p-6 md:p-8">
+    <article className="flex h-full min-w-0 flex-col overflow-hidden border border-line bg-ink transition-[border-color,transform] duration-300 hover:border-line-strong motion-safe:hover:-translate-y-0.5">
+      {project.image ? (
+        <div className="overflow-hidden border-b border-line bg-ink-2">
+          <img
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            className="aspect-[16/10] h-auto w-full object-cover object-top"
+            loading="lazy"
+          />
+        </div>
+      ) : null}
+
+      <div className="flex min-h-0 flex-1 flex-col p-5 sm:p-6 md:p-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="font-mono text-[11px] tracking-[0.2em] text-brass uppercase">{project.scope}</p>
         {project.isPlaceholder ? (
@@ -103,6 +115,7 @@ function ProjectCard({ project }: { project: Project }) {
             icon={<ExternalLink size={14} />}
           />
         ) : null}
+      </div>
       </div>
     </article>
   )
