@@ -21,10 +21,20 @@ export const profile = {
   phone: '+20 111 213 6852',
   /**
    * Optional: Formspree, Web3Forms, or any JSON endpoint.
-   * Leave empty to send messages with mailto as a fallback.
+   * Leave empty to send messages through WhatsApp as a fallback.
    * Example: 'https://formspree.io/f/xxxxxxxx'
    */
   formEndpoint: '',
+}
+
+export function phoneDigits(phone: string = profile.phone): string {
+  return phone.replace(/\D/g, '')
+}
+
+export function whatsappUrl(text?: string, phone: string = profile.phone): string {
+  const base = `https://wa.me/${phoneDigits(phone)}`
+  const message = text?.trim()
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base
 }
 
 export const nav = [
@@ -115,7 +125,7 @@ export const skillGroups = [
   {
     id: 'deployment',
     title: 'Deployment',
-    items: ['Railway', 'Gunicorn', 'Docker', 'Linux', 'GitHub Actions'],
+    items: ['Railway', 'Vercel', 'Gunicorn', 'Docker', 'Linux', 'GitHub Actions'],
   },
 ] as const
 
@@ -194,7 +204,7 @@ export const projects: Project[] = [
       'Revenue charts, order tracking, and team administration',
     ],
     github: 'https://github.com/AttaAhmedDev/saas-dashboard',
-    live: '',
+    live: 'https://saas-dashboard-atta14.vercel.app/',
   },
   {
     id: 'albushra',
@@ -263,7 +273,7 @@ export const projects: Project[] = [
       'Detail pages with cast and trailers',
     ],
     github: 'https://github.com/AttaAhmedDev/movie-app',
-    live: '',
+    live: 'https://movie-j0edcnhb7-atta14.vercel.app/',
   },
 ]
 

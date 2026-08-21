@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { contact, isPlaceholderHref, profile } from '../../data/site'
+import { contact, isPlaceholderHref, profile, whatsappUrl } from '../../data/site'
 import { Button } from '../ui/Button'
 import { Container } from '../ui/Container'
 import { Reveal } from '../ui/Reveal'
@@ -58,28 +58,31 @@ export function Contact() {
         })
         if (!response.ok) throw new Error('Request failed')
       } else {
-        if (isPlaceholderHref(`mailto:${profile.email}`)) {
-          throw new Error('placeholder-email')
+        const chat = whatsappUrl(
+          `Hello Atta, I'm ${name.trim()}.\nEmail: ${email.trim()}\n\n${message.trim()}`,
+        )
+        if (isPlaceholderHref(chat)) {
+          throw new Error('placeholder-whatsapp')
         }
-        const subject = encodeURIComponent(`Portfolio message from ${name.trim()}`)
-        const body = encodeURIComponent(`From: ${name.trim()} <${email.trim()}>\n\n${message.trim()}`)
-        window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
+        window.open(chat, '_blank', 'noopener,noreferrer')
       }
 
       setStatus('success')
-      setStatusMessage('Message ready. Thank you — I will get back to you.')
+      setStatusMessage(
+        profile.formEndpoint
+          ? 'Message sent. Thank you — I will get back to you.'
+          : 'Opening WhatsApp. Send the message there and I will get back to you.',
+      )
       setName('')
       setEmail('')
       setMessage('')
       setErrors({})
     } catch (error) {
       setStatus('error')
-      if (error instanceof Error && error.message === 'placeholder-email') {
-        setStatusMessage(
-          'Update profile.email in src/data/site.ts (or set formEndpoint) before sending messages.',
-        )
+      if (error instanceof Error && error.message === 'placeholder-whatsapp') {
+        setStatusMessage('Update profile.phone in src/data/site.ts before sending WhatsApp messages.')
       } else {
-        setStatusMessage('Something went wrong. Please email me directly.')
+        setStatusMessage('Something went wrong. Please message me on WhatsApp or email.')
       }
     }
   }
@@ -107,8 +110,13 @@ export function Contact() {
               </a>
             </p>
             <p className="mt-2 text-sm text-muted">
-              Phone:{' '}
-              <a href={`tel:${profile.phone.replace(/\s/g, '')}`} className="text-cream underline-offset-4 hover:text-brass hover:underline">
+              WhatsApp:{' '}
+              <a
+                href={whatsappUrl('Hi Atta, I found your portfolio.')}
+                className="text-cream underline-offset-4 hover:text-brass hover:underline"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 {profile.phone}
               </a>
             </p>
