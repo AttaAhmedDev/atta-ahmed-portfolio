@@ -125,7 +125,7 @@ export const skillGroups = [
   {
     id: 'deployment',
     title: 'Deployment',
-    items: ['Railway', 'Vercel', 'Gunicorn', 'Docker', 'Linux', 'GitHub Actions'],
+    items: ['Railway', 'Vercel', 'Gunicorn', 'Docker', 'Kubernetes', 'Linux', 'GitHub Actions'],
   },
 ] as const
 
@@ -386,6 +386,7 @@ export const education = {
   certifications: [
     'Django Application Development with SQL and Databases — IBM',
     'Developing AI Applications with Python and Flask — IBM',
+    'Introduction to Containers w/ Docker, Kubernetes & OpenShift — IBM',
     'JavaScript — Mahara-Tech',
     'Web Development — Information Technology Institute (ITI)',
   ],
