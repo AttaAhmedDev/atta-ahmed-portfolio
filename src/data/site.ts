@@ -17,6 +17,7 @@ export const profile = {
   github: 'https://github.com/AttaAhmedDev',
   linkedin: 'https://www.linkedin.com/in/atta-ahmed-9966a3403',
   resumeUrl: '/resume.pdf',
+  photo: '/atta-ahmed.jpg',
   location: 'Cairo, Egypt',
   phone: '+20 111 213 6852',
   /**

@@ -59,8 +59,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="rise min-w-0" style={{ animationDelay: '320ms' }}>
-          <ArchitectureVisual />
+        <div className="rise mx-auto w-full max-w-sm min-w-0 xl:mx-0 xl:max-w-none" style={{ animationDelay: '320ms' }}>
+          <Portrait />
         </div>
       </Container>
 
@@ -77,56 +77,29 @@ export function Hero() {
   )
 }
 
-function ArchitectureVisual() {
-  const nodes = hero.stack
-
+function Portrait() {
   return (
-    <aside
-      className="border border-line bg-surface/80 p-4 sm:p-6 lg:p-7"
-      aria-label="Simplified full-stack architecture"
-    >
-      <div className="mb-6 flex items-end justify-between gap-3 border-b border-line pb-4">
-        <div>
-          <p className="font-mono text-[10px] tracking-[0.2em] text-brass uppercase sm:text-[11px]">
-            Request path
-          </p>
-          <p className="mt-1 text-sm text-muted">How a request moves through the stack</p>
-        </div>
-        <p className="hidden font-mono text-[10px] text-muted sm:block">full-stack</p>
-      </div>
-
-      <ol className="relative">
-        <span
-          className="absolute top-3 bottom-3 left-[5px] w-px bg-line-strong"
-          aria-hidden="true"
+    <figure className="border border-line bg-surface/80 p-2 sm:p-3">
+      <div className="overflow-hidden border border-line bg-ink">
+        <img
+          src={profile.photo}
+          alt={`${profile.name}, ${profile.role}`}
+          width={800}
+          height={1000}
+          className="aspect-[4/5] h-auto w-full object-cover object-[center_8%]"
         />
-        {nodes.map((node, index) => (
-          <li key={node.name} className="relative flex gap-4 pb-5 last:pb-0">
-            <span
-              className="relative z-10 mt-3.5 h-2.5 w-2.5 shrink-0 rounded-full border border-brass bg-ink shadow-[0_0_0_4px_#11141a]"
-              aria-hidden="true"
-            />
-            <div className="min-w-0 flex-1 border border-line bg-ink px-3.5 py-3 transition-colors duration-200 hover:border-brass/40 sm:px-4">
-              <div className="flex items-center justify-between gap-3">
-                <span className="font-mono text-[10px] text-muted">0{index + 1}</span>
-                <span className="font-mono text-[10px] tracking-[0.16em] text-brass uppercase">
-                  {node.via}
-                </span>
-              </div>
-              <p className="mt-1.5 font-serif text-lg leading-tight text-cream sm:text-xl">
-                {node.name}
-              </p>
-              <p className="mt-1 font-mono text-[10px] tracking-[0.18em] text-muted uppercase">
-                {node.layer}
-              </p>
-            </div>
-          </li>
-        ))}
-      </ol>
-
-      <p className="mt-5 border-t border-line pt-4 font-mono text-[10px] tracking-[0.14em] text-muted uppercase">
-        Client <span className="text-brass">→</span> Server <span className="text-brass">→</span> Data
-      </p>
-    </aside>
+      </div>
+      <figcaption className="flex items-end justify-between gap-3 px-1 pt-3 pb-1">
+        <div>
+          <p className="font-serif text-lg leading-tight text-cream sm:text-xl">{profile.name}</p>
+          <p className="mt-1 font-mono text-[10px] tracking-[0.16em] text-muted uppercase">
+            {profile.location}
+          </p>
+        </div>
+        <p className="hidden font-mono text-[10px] tracking-[0.16em] text-brass uppercase sm:block">
+          Portrait
+        </p>
+      </figcaption>
+    </figure>
   )
 }

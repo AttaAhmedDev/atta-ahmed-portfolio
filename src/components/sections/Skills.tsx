@@ -3,6 +3,7 @@ import { Container } from '../ui/Container'
 import { Reveal } from '../ui/Reveal'
 import { Section } from '../ui/Section'
 import { SectionHeading } from '../ui/SectionHeading'
+import { SkillIcon } from '../ui/SkillIcon'
 
 export function Skills() {
   return (
@@ -22,13 +23,13 @@ export function Skills() {
               <h3 className="font-mono text-[11px] tracking-[0.2em] text-brass uppercase">
                 {group.title}
               </h3>
-              <ul className="mt-4 flex flex-wrap gap-2 sm:mt-5 sm:block sm:space-y-2.5 sm:gap-0">
+              <ul className="mt-4 flex flex-wrap gap-2 sm:mt-5">
                 {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="border border-line px-2.5 py-1 text-sm text-cream/90 sm:border-0 sm:px-0 sm:py-0"
-                  >
-                    {item}
+                  <li key={item}>
+                    <span className="inline-flex items-center gap-2 border border-line bg-ink/60 px-2.5 py-1.5 text-sm text-cream/90">
+                      <SkillIcon name={item} className="text-brass" />
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
