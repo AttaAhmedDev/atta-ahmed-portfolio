@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Atta Ahmed — Resume</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 12mm 14mm 12mm 14mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #1a1a1a;
+        font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        font-size: 10.2pt;
+        line-height: 1.24;
+      }
+
+      a {
+        color: #2e75b6;
+        text-decoration: none;
+      }
+
+      h1 {
+        margin: 0;
+        color: #1f4e79;
+        font-size: 22pt;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-align: center;
+      }
+
+      .subtitle {
+        margin: 2px 0 0;
+        text-align: center;
+        font-size: 11.5pt;
+        font-weight: 600;
+      }
+
+      .contact {
+        margin: 4px 0 0;
+        text-align: center;
+        font-size: 10pt;
+      }
+
+      .contact .links {
+        margin-top: 1px;
+      }
+
+      h2 {
+        margin: 8px 0 4px;
+        color: #2e75b6;
+        font-size: 12pt;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        border-bottom: 1.15px solid #2e75b6;
+        padding-bottom: 1px;
+      }
+
+      p {
+        margin: 0 0 4px;
+      }
+
+      .skills p {
+        margin: 0 0 2px;
+      }
+
+      .job,
+      .project,
+      .edu {
+        margin: 0 0 5px;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .title {
+        font-weight: 700;
+      }
+
+      .dates {
+        flex-shrink: 0;
+        font-style: italic;
+        font-size: 10pt;
+        white-space: nowrap;
+      }
+
+      .meta {
+        font-style: italic;
+        color: #2e75b6;
+        font-size: 10pt;
+        margin: 0 0 2px;
+      }
+
+      ul {
+        margin: 1px 0 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 0 0 1px;
+      }
+
+      .gpa {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ATTA AHMED</h1>
+    <p class="subtitle">Software Engineer | Python, Backend Development &amp; REST APIs</p>
+    <p class="contact">
+      Cairo, Egypt | +20 111 213 6852 |
+      <a href="mailto:ataahmad17122000@gmail.com">ataahmad17122000@gmail.com</a><br />
+      <span class="links">
+        <a href="https://www.linkedin.com/in/atta-ahmed-9966a3403">linkedin.com/in/atta-ahmed-9966a3403</a>
+        |
+        <a href="https://github.com/AttaAhmedDev">github.com/AttaAhmedDev</a>
+      </span>
+    </p>
+
+    <h2>Profile</h2>
+    <p>
+      Software Engineer with hands-on experience building backend systems and REST APIs in Python
+      (Flask/Django), with additional full-stack delivery experience across React front ends. Strong
+      focus on clean architecture, test coverage, and code quality — comfortable working within
+      structured development processes and collaborating with senior engineers on debugging, code
+      review, and iterative delivery. Experience spans database design, authentication/authorization
+      systems, content-managed Django sites, background job queues, and end-to-end feature ownership
+      from a live marketing platform to a multi-tenant SaaS dashboard.
+    </p>
+
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <p>
+        <strong>Programming Languages:</strong> Python, JavaScript, TypeScript, PHP, SQL
+      </p>
+      <p>
+        <strong>Backend Development:</strong> Flask, Django, REST APIs, Celery, JWT Authentication,
+        Role-Based Access Control (RBAC), SQLAlchemy, ORM, CRUD Operations, MVC, MVT
+      </p>
+      <p>
+        <strong>Core Concepts:</strong> Object-Oriented Programming (OOP), Software Development Life
+        Cycle (SDLC), Unit Testing (pytest/unittest), Authentication &amp; Authorization, API
+        Integration, State Management, Component-Based Architecture
+      </p>
+      <p>
+        <strong>Databases &amp; Messaging:</strong> PostgreSQL, MySQL, Redis, RabbitMQ, Database
+        Design, Query Optimization
+      </p>
+      <p>
+        <strong>Frontend Development:</strong> React, Vite, React Router, JavaScript (ES6+), HTML5,
+        CSS3, Bootstrap, Chart.js / react-chartjs-2, Responsive Design
+      </p>
+      <p>
+        <strong>Tools &amp; Technologies:</strong> Git, GitHub Actions, npm, Agile, Postman, Railway,
+        Vercel, Gunicorn, Linux, Docker, Kubernetes
+      </p>
+    </div>
+
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="row">
+        <span class="title">Full-Stack Developer — Freelance Client, COREXION</span>
+        <span class="dates">August 2026 – Present</span>
+      </div>
+      <ul>
+        <li>
+          Built the production Django marketing site at
+          <a href="https://corexion.uk/">corexion.uk</a>, with server-rendered pages, clean URLs, and
+          PostgreSQL-backed copy and photos.
+        </li>
+        <li>
+          Implemented a private CMS so editors can update page sections without changing templates,
+          with image uploads to object storage.
+        </li>
+        <li>
+          Added a rate-limited read API, automated tests for content and cleanup, and deployed the
+          stack to Vercel with Neon PostgreSQL.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span class="title">Full-Stack Developer — Freelance Client, Cairo, Egypt</span>
+        <span class="dates">May 2026 – June 2026</span>
+      </div>
+      <ul>
+        <li>
+          Designed and built the backend for “FlowDesk,” a multi-tenant SaaS analytics dashboard,
+          using Flask and PostgreSQL, with JWT authentication and RBAC-driven authorization across
+          20+ REST endpoints for 7 user roles.
+        </li>
+        <li>
+          Built the React (Vite) single-page front end consuming that API, using React Router for
+          protected, role-based navigation, token storage, and auth guards across all 7 roles.
+        </li>
+        <li>
+          Modeled the PostgreSQL schema and built reusable React components (tables, forms, modals)
+          within a clean, component-based structure spanning api, auth, components, and pages
+          modules.
+        </li>
+        <li>
+          Built dashboards visualizing revenue, order statistics, and team activity with
+          react-chartjs-2, and deployed the full stack to Railway.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span class="title">Full-Stack Developer — Freelance Client, Beirut, Lebanon</span>
+        <span class="dates">October 2025 – December 2025</span>
+      </div>
+      <ul>
+        <li>
+          Designed and built the PHP JSON API and React (Vite) front end for an English/Math learning
+          platform, collaborating remotely with an international client through requirements,
+          delivery, and deployment.
+        </li>
+        <li>
+          Built an admin dashboard in React for worksheets, presentations, games, and flashcards,
+          including secure content uploads.
+        </li>
+        <li>
+          Built CRUD REST endpoints for auth, worksheets, presentations, and games, plus responsive
+          desktop and mobile interfaces.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span class="title">Backend Developer Intern — x. ware</span>
+        <span class="dates">June 2022 – August 2022</span>
+      </div>
+      <ul>
+        <li>
+          Worked under senior engineer supervision developing and maintaining backend services in
+          Python, designing and optimizing RESTful APIs for web applications.
+        </li>
+        <li>
+          Wrote and optimized SQL queries against relational databases and enforced CRUD operations
+          integrated with frontend applications.
+        </li>
+        <li>
+          Collaborated with senior developers in an Agile environment; participated in code reviews,
+          debugging, and testing. Used Git and GitHub for version control.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span class="title">Front-End Developer Intern — Information Technology Institute (ITI), Assiut, Egypt</span>
+        <span class="dates">June 2021 – August 2021</span>
+      </div>
+      <ul>
+        <li>Completed intensive hands-on training in modern front-end web development practices.</li>
+        <li>Built responsive web pages and interfaces using HTML, CSS, and JavaScript.</li>
+        <li>
+          Applied object-oriented programming, Git version control, and collaborative workflows
+          across the software development life cycle (SDLC).
+        </li>
+      </ul>
+    </div>
+
+    <h2>Projects</h2>
+
+    <div class="project">
+      <p class="title">COREXION — Django Marketing Site &amp; CMS</p>
+      <p class="meta">
+        GitHub: <a href="https://github.com/AttaAhmedDev/COREXION">https://github.com/AttaAhmedDev/COREXION</a>
+        | Live: <a href="https://corexion.uk/">https://corexion.uk</a>
+      </p>
+      <ul>
+        <li>
+          Built a production Django site with server-rendered pages, clean URLs, and a PostgreSQL
+          CMS for headings, copy, and photos.
+        </li>
+        <li>
+          Implemented image cleanup, a rate-limited read API, automated tests, and Vercel + Neon
+          deployment.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <p class="title">Task Queues — Django + Celery Background Jobs</p>
+      <p class="meta">
+        GitHub: <a href="https://github.com/AttaAhmedDev/Task-Queues">https://github.com/AttaAhmedDev/Task-Queues</a>
+      </p>
+      <ul>
+        <li>
+          Built a Django movie queue where submitting a title enqueues a Celery job; a worker fills
+          in details asynchronously from a local list.
+        </li>
+        <li>
+          Used RabbitMQ as the broker and Redis as the result backend, with Docker Compose running
+          web, worker, broker, and Redis together.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <p class="title">E-Commerce Backend — Django REST Framework</p>
+      <p class="meta">
+        GitHub: <a href="https://github.com/AttaAhmedDev/E-commerce">https://github.com/AttaAhmedDev/E-commerce</a>
+      </p>
+      <ul>
+        <li>
+          Built a Django REST Framework e-commerce backend with JWT authentication, token
+          blacklisting, product catalog, variants, and cart merge on login.
+        </li>
+        <li>
+          Added filtering, OpenAPI docs via drf-spectacular, and pytest-django + factory-boy test
+          coverage.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <p class="title">FlowDesk — Full-Stack (Flask + React) Multi-Tenant SaaS Dashboard</p>
+      <p class="meta">
+        GitHub: <a href="https://github.com/AttaAhmedDev/saas-dashboard">https://github.com/AttaAhmedDev/saas-dashboard</a>
+        | Live demo: <a href="https://saas-dashboard-atta14.vercel.app">https://saas-dashboard-atta14.vercel.app</a>
+      </p>
+      <ul>
+        <li>
+          Designed and built a Flask + PostgreSQL JWT API across 20+ endpoints, plus the entire
+          front end in React (Vite) with React Router.
+        </li>
+        <li>
+          Implemented role-aware UI rendering for seven RBAC roles and visualized revenue, orders,
+          and team analytics with react-chartjs-2.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <p class="title">Online Learning Platform — Full-Stack (PHP + React)</p>
+      <p class="meta">
+        GitHub: <a href="https://github.com/AttaAhmedDev/albushraedu_website">https://github.com/AttaAhmedDev/albushraedu_website</a>
+        | Live: <a href="https://albushraedu.com">https://albushraedu.com</a>
+      </p>
+      <ul>
+        <li>
+          Designed and built the PHP JSON API and React (Vite) front end for an English/Math learning
+          platform, with an admin dashboard for worksheets, presentations, games, and flashcards.
+        </li>
+        <li>
+          Built fully responsive layouts for desktop and mobile, matching the production site live at
+          albushraedu.com.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <p class="title">Movie App — React Movie Browser (TMDB API)</p>
+      <p class="meta">
+        GitHub: <a href="https://github.com/AttaAhmedDev/movie-app">https://github.com/AttaAhmedDev/movie-app</a>
+        | Live demo: <a href="https://movie-app-atta14.vercel.app">https://movie-app-atta14.vercel.app</a>
+      </p>
+      <ul>
+        <li>
+          Built a React movie browser consuming The Movie Database (TMDB) REST API, with search,
+          favorites, and detail pages for cast and trailers.
+        </li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="row">
+        <span class="title">Bachelor of Information Systems — Assiut University, Assiut, Egypt</span>
+        <span class="dates">April 2019 – April 2023</span>
+      </div>
+      <p class="gpa">GPA: 3.41</p>
+    </div>
+
+    <h2>Certifications &amp; Courses</h2>
+    <ul>
+      <li>Django Application Development with SQL and Databases — IBM</li>
+      <li>Developing AI Applications with Python and Flask — IBM</li>
+      <li>Introduction to Containers w/ Docker, Kubernetes &amp; OpenShift — IBM</li>
+      <li>JavaScript — Mahara-Tech</li>
+      <li>Web Development — Information Technology Institute, ITI</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <p style="margin:0">English — Upper-Intermediate</p>
+  </body>
+</html>

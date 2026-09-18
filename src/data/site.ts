@@ -69,13 +69,14 @@ export const about = {
   title: 'About Me',
   paragraphs: [
     'Software Engineer with hands-on experience building backend systems and REST APIs in Python (Flask/Django), with additional full-stack delivery across React front ends. I focus on clean architecture, test coverage, and code quality.',
-    'My work covers database design, authentication and authorization, and end-to-end feature ownership — from a multi-tenant SaaS dashboard to a live educational platform.',
+    'My work covers database design, authentication and authorization, and end-to-end feature ownership — from a live Django marketing site and a multi-tenant SaaS dashboard to an educational platform.',
     'I am comfortable working in structured development processes: collaborating on debugging, code review, and iterative delivery.',
   ],
   focus: [
     'Backend systems and REST APIs in Python',
-    'Full-stack delivery with React',
+    'Full-stack delivery with React and Django',
     'PostgreSQL and MySQL design',
+    'Background jobs with Celery, RabbitMQ, and Redis',
     'JWT authentication and role-based access control',
     'Testing, Git workflows, and clean architecture',
   ],
@@ -99,6 +100,7 @@ export const skillGroups = [
       'Flask',
       'Django',
       'REST APIs',
+      'Celery',
       'JWT Authentication',
       'RBAC',
       'SQLAlchemy',
@@ -108,7 +110,15 @@ export const skillGroups = [
   {
     id: 'databases',
     title: 'Databases',
-    items: ['PostgreSQL', 'MySQL', 'Database Design', 'Query Optimization', 'Transactions', 'ACID Concepts'],
+    items: [
+      'PostgreSQL',
+      'MySQL',
+      'Redis',
+      'Database Design',
+      'Query Optimization',
+      'Transactions',
+      'ACID Concepts',
+    ],
   },
   {
     id: 'tools',
@@ -118,6 +128,7 @@ export const skillGroups = [
       'GitHub',
       'Postman',
       'pytest',
+      'RabbitMQ',
       'OOP',
       'Debugging',
       'Testing',
@@ -185,6 +196,30 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'corexion',
+    isPlaceholder: false,
+    name: 'COREXION',
+    scope: 'Full-stack',
+    description:
+      'A production marketing site for COREXION, served by Django with PostgreSQL-backed content and clean URLs.',
+    problem:
+      'The company needed a public site where copy and photos could be edited without touching templates, while keeping fast, crawlable pages.',
+    solution:
+      'Django renders each page on the server from HTML templates. A private CMS stores sections in PostgreSQL; photos go to object storage. Pages stay on clean URLs from a single registry.',
+    contribution:
+      'I built the Django site, CMS, PostgreSQL models, rate-limited read API, tests, and the live deployment at corexion.uk.',
+    stack: ['Python', 'Django', 'PostgreSQL', 'Django REST Framework', 'Vercel', 'HTML', 'CSS'],
+    features: [
+      'Server-rendered marketing pages with clean URLs',
+      'Private CMS for headings, copy, and photos',
+      'PostgreSQL content model with image cleanup',
+      'Live production site',
+    ],
+    github: 'https://github.com/AttaAhmedDev/COREXION',
+    live: 'https://corexion.uk/',
+    image: '/projects/corexion.png',
+  },
   {
     id: 'flowdesk',
     isPlaceholder: false,
@@ -257,6 +292,30 @@ export const projects: Project[] = [
     live: '',
   },
   {
+    id: 'task-queues',
+    isPlaceholder: false,
+    name: 'Task Queues',
+    scope: 'Backend',
+    description:
+      'A Django movie queue where submitting a title enqueues a Celery job; a worker fills in details from a local list.',
+    problem:
+      'A web request should not wait on slow lookup work. Movie details need to be filled in the background so the page stays responsive.',
+    solution:
+      'Django saves a pending Movie row, then Celery picks up the job from RabbitMQ. Redis stores task results. Docker Compose runs the web app, worker, broker, and result backend together.',
+    contribution:
+      'I designed the queue flow, Celery task, Django models and views, and the Docker Compose stack for RabbitMQ, Redis, the web process, and the worker.',
+    stack: ['Python', 'Django', 'Celery', 'RabbitMQ', 'Redis', 'Docker'],
+    features: [
+      'Enqueue a title; worker updates the row asynchronously',
+      'RabbitMQ broker and Redis result backend',
+      'Docker Compose for web, worker, RabbitMQ, and Redis',
+      'Status tracking from pending to done',
+    ],
+    github: 'https://github.com/AttaAhmedDev/Task-Queues',
+    live: '',
+    image: '/projects/task-queues.png',
+  },
+  {
     id: 'movie-app',
     isPlaceholder: false,
     name: 'Movie App',
@@ -317,6 +376,20 @@ export type ExperienceEntry = {
 }
 
 export const experience: ExperienceEntry[] = [
+  {
+    id: 'exp-corexion',
+    isPlaceholder: false,
+    title: 'Full-Stack Developer',
+    organization: 'Freelance Client — COREXION',
+    period: 'August 2026 – Present',
+    location: 'Remote — United Kingdom',
+    category: 'Full-Stack Development',
+    bullets: [
+      'Built the production Django marketing site at corexion.uk, with server-rendered pages, clean URLs, and PostgreSQL-backed copy and photos.',
+      'Implemented a private CMS so editors can update page sections without changing templates, with image uploads to object storage.',
+      'Added a rate-limited read API, automated tests for content and cleanup, and deployed the stack to Vercel with Neon PostgreSQL.',
+    ],
+  },
   {
     id: 'exp-flowdesk',
     isPlaceholder: false,
