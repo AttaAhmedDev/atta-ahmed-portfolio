@@ -20,7 +20,7 @@ export function Resume() {
               </h2>
               <p className="mt-4 max-w-lg text-sm leading-relaxed text-pretty text-muted">
                 A concise overview of my background as a software engineer — experience,
-                education, and the Python and React work I do across the stack.
+                education, and the Python, TypeScript, and React work I do across the stack.
               </p>
             </div>
             <LinkButton href={profile.resumeUrl} download className="w-full shrink-0 sm:w-auto">
